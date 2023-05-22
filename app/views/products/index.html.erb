@@ -1,0 +1,15 @@
+<% if @products.length.size.zero?  %>
+<ul class="products-list">
+  <% @products.each do |product| %>
+  <li class="product">
+    <span class="product-name"> <%= product.name%></span>
+    <p class="product-desc"> <%= product.description%></p>
+  </li>
+<% end %>
+</ul>
+<% else %>
+<div class="products-not-found">
+  <h3 class="product-not-found__note">Products not found. Please add new product by clicking on button below.</h3>
+  <%= link_to "Add new product", new_product_path %> 
+</div>
+<% end %>

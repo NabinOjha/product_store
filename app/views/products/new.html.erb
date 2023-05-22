@@ -1,0 +1,17 @@
+<div class="product-form">
+  <h3 class="product-form-title">Add new product</h3>
+  <%= form_with  do |form|%>
+  <div class="form-control">
+     <%= form.label :name, "Product name" %>
+     <%= form.text_field :name %>
+  </div>
+   <div class="form-control">
+     <%= form.label :image_url, "Product image url" %>
+     <%= form.text_field :name %>
+  </div>
+   <div class="form-control">
+     <%= form.label :description, "Product description" %>
+     <%= form.text_field :name %>
+  </div>
+  <%end%>
+</div>
