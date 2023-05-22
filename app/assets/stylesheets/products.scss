@@ -1,3 +1,18 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.products {
+  max-width: 1140px;
+  margin: 0 auto;
+  & > .product-form {
+    .form-control {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+    }
+  }
+  .button-container {
+    margin-top: 20px;
+  }
+}
