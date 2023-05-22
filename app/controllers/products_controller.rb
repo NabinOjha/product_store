@@ -11,9 +11,17 @@ class ProductsController < ApplicationController
     redirect_to products_path
   end
 
-private 
-def product_params
-  params.permit(:name, :image_url, :description)
-end
+  def edit 
+    @product = Product.find(params.require(:id))
+  end
 
+  def destroy
+    @product = Product.find(params.require(:id))
+    redirect_to products_path
+  end
+
+private 
+  def product_params
+    params.permit(:name, :image_url, :description)
+  end
 end

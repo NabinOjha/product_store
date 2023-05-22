@@ -1,9 +1,11 @@
-<% if !@products.length.size.zero?  %>
+<% if !@products.size.zero?  %>
 <ul class="products-list">
   <% @products.each do |product| %>
-  <li class="product">
+  <li class="product <%= cycle("even", "odd")%> edit-<%= product.id %>">
     <span class="product-name"> <%= product.name%></span>
     <p class="product-desc"> <%= product.description%></p>
+    <%= link_to "Edit", edit_product_path(product) %>
+    <%= link_to "Delete", edit_product_path(product) %>
   </li>
 <% end %>
 </ul>

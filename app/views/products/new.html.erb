@@ -1,6 +1,6 @@
 <div class="product-form">
   <h3 class="product-form-title">Add new product</h3>
-  <%= form_with url: "/products", method: :post do |form|%>
+  <%= form_with model: @product,  url: products_path, method: :post do |form|%>
   <div class="form-control">
      <%= form.label :name, "Product name" %>
      <%= form.text_field :name %>
