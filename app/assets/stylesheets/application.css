@@ -13,3 +13,30 @@
  *= require_tree .
  *= require_self
  */
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+input {
+  padding: 10px;
+  border-radius: 2px;
+  outline: none;
+  border: none;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  margin-top: 5px;
+}
+
+.button-container {
+  margin-top: 20px;
+}
+
+.login-btn-container {
+  text-align: right;
+}

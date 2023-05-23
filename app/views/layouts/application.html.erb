@@ -11,8 +11,18 @@
   </head>
 
   <body>
-    <div class="<%= controller_name %>">
-      <%= yield %>
+    <div class="container">
+      <div class="<%= controller_name %>">
+        <div class="login-btn-container">
+          <% if session[:current_user].present? %>
+            <%= link_to "My cart", orders_path %>
+            <%= link_to "Sign out", "/sessions/sign_out", method: :delete  %>
+          <%else%>
+          <%= current_page?(new_session_path) ? "" : link_to("Sign in", new_session_path) %>
+          <% end %>
+        </div>
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>

@@ -6,15 +6,20 @@
      <%= form.text_field :name %>
   </div>
    <div class="form-control">
+     <%= form.label :price, "Product price" %>
+     <%= form.text_field :price %>
+  </div>
+   <div class="form-control">
      <%= form.label :image_url, "Product image url" %>
      <%= form.text_field :image_url %>
   </div>
    <div class="form-control">
      <%= form.label :description, "Product description" %>
-     <%= form.text_area :description %>
+     <%= form.text_area :description, rows: 5 %>
   </div>
   <div class="button-container">
    <%= form.submit "Submit" %>
   </div>
   <%end%>
 </div>
+

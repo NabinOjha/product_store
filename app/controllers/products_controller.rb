@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :authenticate!
+  
   def index
     @products = Product.all 
   end
@@ -17,11 +19,12 @@ class ProductsController < ApplicationController
 
   def destroy
     @product = Product.find(params.require(:id))
+    @product.destroy!
     redirect_to products_path
   end
 
 private 
   def product_params
-    params.permit(:name, :image_url, :description)
+    params.permit(:name, :image_url, :description, :price)
   end
 end

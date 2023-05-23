@@ -1,4 +1,5 @@
 class Product < ApplicationRecord 
-  validates :name, presence: true, uniqueness: true
-  validates :image_url, presence: true
+  validates :name, uniqueness: true
+  validates :name, presence: true
+  validates :price, presence: true, numericality: { greater_than: 0.01 } 
 end

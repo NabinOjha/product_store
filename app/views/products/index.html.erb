@@ -1,17 +1,22 @@
 <% if !@products.size.zero?  %>
+<div class="add-new-product-btn__container">
+  <%= link_to "Add new product", new_product_path, class: "add-new-btn" %> 
+<div>
 <ul class="products-list">
   <% @products.each do |product| %>
-  <li class="product <%= cycle("even", "odd")%> edit-<%= product.id %>">
+  <li class="product <%= cycle("even", "odd")%> product-<%= product.id %>">
     <span class="product-name"> <%= product.name%></span>
     <p class="product-desc"> <%= product.description%></p>
-    <%= link_to "Edit", edit_product_path(product) %>
-    <%= link_to "Delete", edit_product_path(product) %>
+    <p class="product-price">Price:  <%= product.price %></p>
+      <%= link_to "Add to cart", edit_product_path(product) %>
+      <%= link_to "Edit", edit_product_path(product) %>
+      <%= link_to "Destroy", product_path(product), method: :delete %>
   </li>
 <% end %>
 </ul>
 <% else %>
 <div class="products-not-found">
   <h3 class="product-not-found__note">Products not found. Please add new product by clicking on button below.</h3>
-  <%= link_to "Add new product", new_product_path %> 
+  <%= link_to "Add new product", new_product_path, class: "add-new-btn" %> 
 </div>
 <% end %>
